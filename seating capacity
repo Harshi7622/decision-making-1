@@ -1,0 +1,44 @@
+'''
+10)
+
+
+ There are 3 labs in the CSE department. The labs are L1, L2, and L3 with a seating capacity of x, y, and z respectively. A single lab needs to be allocated to a class of 'n' students. The labs need to be utilized to the maximum i.e the number of systems used should not be minimal. Which lab needs to be allocated to this class?
+Input format:
+Input consists of 4 integers
+The first input denotes 'x'
+The second input denotes 'y'
+The third input denotes 'z'
+The fourth input denotes 'n'
+Output format:
+Print the lab which is suitable for  'n' number of students
+Refer the Sample output for formatting
+Sample Input:
+30
+40
+20
+25
+Sample Output:
+L1
+'''
+# Get input from the user
+capacity_L1 = int(input("Enter the seating capacity of L1: "))
+capacity_L2 = int(input("Enter the seating capacity of L2: "))
+capacity_L3 = int(input("Enter the seating capacity of L3: "))
+num_students = int(input("Enter the number of students: "))
+
+# Initialize variables to track the best lab
+suitable_lab = None
+max_capacity_used = 0
+
+# Check each lab's capacity
+for lab, capacity in [('L1', capacity_L1), ('L2', capacity_L2), ('L3', capacity_L3)]:
+    if capacity >= num_students:
+        if capacity > max_capacity_used:
+            max_capacity_used = capacity
+            suitable_lab = lab
+
+# Print the suitable lab
+if suitable_lab:
+    print(suitable_lab)
+else:
+    print("No suitable lab available")
